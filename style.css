@@ -1,0 +1,96 @@
+@keyframes fade-In {
+    0% {color: black;}
+    25% {color: black;}
+    100% {color: rgb(195, 97, 22);;}
+}
+@keyframes fade-in {
+    0% {color: black;}
+    25% {color: black;}
+    100% {color: rgb(195, 97, 22);;}
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.wrap-clock {
+    display: flex;
+}
+
+.clock {
+    font-size: 80px;
+    color: rgb(195, 97, 22);
+    letter-spacing: 2px;
+    width: 560px;
+    margin-bottom: 200px;
+
+    animation-name: fade-In;
+    animation-duration: 4s;
+}
+
+.clock--to24h {
+    width: 547px;
+    
+    animation-name: fade-in;
+    animation-duration: 4s;
+}
+
+.session {
+    font-size: 80px;
+    color: rgb(195, 97, 22);
+    letter-spacing: 2px;
+
+    animation-name: fade-In;
+    animation-duration: 4s;
+}
+
+.d-none {
+    display: none;
+}
+
+.toggle {
+    background-color: rgba(195, 97, 22, 0.694);
+    padding: 10px 12px 10px 12px;
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 100px;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    border: 5px solid rgba(195, 97, 22, 0.724);
+    margin: 0 auto;
+}
+
+.toggle__item {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.toggle__item--active {
+    border-radius: 50px;
+    background-color: rgba(195, 97, 22, 0.724);
+    width: 60px;
+    height: 53px;
+    position: absolute;
+    z-index: -10;
+    top: 7px;
+    left: 8px;
+    transition: left .5s linear;
+}
+
+.toggle__item--hover {
+   box-shadow: 0px 0px 5px  rgba(195, 97, 22, 0.724);
+}
+
+.toggle__item--to24h {
+    left: 85px;
+}
+
