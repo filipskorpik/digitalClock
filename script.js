@@ -3,6 +3,15 @@ let toggle = document.querySelector(".toggle")
 let active = document.querySelector(".toggle__item--active")
 let forSession = document.querySelector(".session")
 
+// přidá 0 před čéslo menší než 10
+let addZero = function(x){
+    if(x < 10){
+        return "0" + x
+    } else {
+        return x
+    }
+}
+
 // každou sekundu načte aktuální čas
 let showTime = function(){
     let date = new Date()
@@ -17,19 +26,20 @@ let showTime = function(){
         forSession.classList.toggle("d-none")
     })
 
+
     if(active.classList.contains("toggle__item--to24h")){
-        h = h < 10 ? "0" + h : h
-        m = m < 10 ? "0" + m : m
-        s = s < 10 ? "0" + s : s
+        h = addZero(h)
+        m = addZero(m)
+        s = addZero(s)
     } else {
         if(h > 12){
             h = h - 12
             session = "PM"
         }
     
-        h = h < 10 ? "0" + h : h
-        m = m < 10 ? "0" + m : m
-        s = s < 10 ? "0" + s : s
+        h = addZero(h)
+        m = addZero(m)
+        s = addZero(s)
 
         forSession.textContent = session
     }
